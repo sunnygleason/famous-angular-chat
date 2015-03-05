@@ -1,0 +1,91 @@
+<div class='col-md-12'>
+<div class='row'>
+<div class='col-md-8 well hapwell'>
+<h2>
+Real-time Apps
+</h2>
+<br>
+<h4>
+AngularJS PubNub API
+</h4>
+<p>
+Optimized to make building real-time web apps easy.
+</p>
+<p>
+Enjoy this small, yet powerful sample, which consists of
+about 70 lines of coffeescript.
+</p>
+<div class='row'>
+<img class='owl' src='images/owl3-20140902-002.png' width='300'>
+<!-- / hides on mobile -->
+<img class='bird hidden-xs' src='images/bird3-20140902-002.png' width='250'>
+</div>
+</div>
+<div class='col-md-4'>
+<div class='panel panel-default'>
+<div class='panel-heading'>
+<h3 class='panel-title'>
+<i class='fa fa-info-circle'></i>
+Files on Github
+</h3>
+</div>
+<div class='panel-body'>
+<ul>
+<li>
+<a href='https://github.com/pubnub/pubnub-angular'>
+<i class='fa fa-github'></i>
+PubNub-Angular SDK
+</a>
+</li>
+<li>
+<a href='https://github.com/pubnub/javascript'>
+<i class='fa fa-github'></i>
+PubNub JavaScript SDK
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='panel panel-default panel-primary joinpan' ng-hide='selectedChannel'>
+<div class='panel-heading'>
+<h3 class='panel-title'>Join Chat</h3>
+</div>
+<form class='panel-body'>
+<ul class='list-unstyled'>
+<li>
+<label>
+Username
+</label>
+</li>
+<li>
+<input class='input-lg form-control' maxlength='20' ng-model='data.username' size='20' type='text'>
+</li>
+</ul>
+<ul class='list-unstyled'>
+<li>
+<label>
+City
+</label>
+</li>
+<li>
+<input class='input-lg form-control' maxlength='20' ng-model='data.city' size='20' type='text'>
+</li>
+</ul>
+<ul class='list-unstyled'>
+<li>
+<label>
+<input class='checkbox-inline input-lg' ng-model='data.super' type='checkbox'>
+Log in with super powers?
+</label>
+</li>
+</ul>
+<ul class='list-unstyled'>
+<li>
+<input class='btn btn-block btn-hg btn-primary' ng-click='join()' type='submit' value='Join'>
+</li>
+</ul>
+</form>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,19 @@
+<div fa-app style='width: 1325px; height:400px;'>
+<div fa-modifier fa-translate='[0,0,0]'>
+<div fa-surface>
+<form ng-submit='publish()'>
+<div class='input-group'>
+<input class='input-sm form-control' ng-model='newMessage' type='text'>
+<span class='input-group-btn'>
+<input class='input-sm btn btn-default' type='submit' value='Send'>
+</span>
+</div>
+</form>
+</div>
+</div>
+<div fa-modifier fa-translate='[375, 50 + $index * 35, 0]' ng-repeat='message in messages track by $index'>
+<div fa-background-color="'#3498db'" fa-color="'#fff'" fa-size='[undefined,undefined]' fa-surface>
+{{message}}
+</div>
+</div>
+</div>

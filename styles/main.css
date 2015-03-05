@@ -1,0 +1,128 @@
+.thepics {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hapwell {
+  padding-bottom: 10px;
+  background-color: #ecf0f1;
+  color: #34495e;
+}
+
+.bird {
+  float: right;
+}
+
+.chatbox {
+  font-family:Lato;
+  margin-top:6px;
+  float: left;
+  margin-right: auto;
+  font-size: 14px;
+}
+
+.userlabel {
+  margin-right:8px;
+  margin-top:6px;
+}
+
+.roomlabel {
+  margin-right:8px;
+  margin-top:6px;
+}
+
+.brandP {
+  padding-top:20px;
+}
+
+.padding-20 {
+  padding:20px;
+}
+
+.footer-banner {
+  background-color: #f39c12;
+  color: white;
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 5px;
+}
+
+.bottom-menu {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+@media (max-width: 767px)
+{
+    body {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+
+/* === media queries for famous and gif === */
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  .exampleimg {
+    width: 300px;
+  }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+  .exampleimg {
+    width: 300px;
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+  .exampleimg {
+    width: 300px;
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1223px) {
+    .exampleimg {
+    width: 480px;
+  }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1223px)
+and (orientation : landscape) {
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1223px)
+and (orientation : portrait) {
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+  .exampleimg {
+    width: 640px;
+  }
+}
+
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+  .exampleimg {
+    width: 640px;
+  }
+}

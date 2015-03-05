@@ -1,0 +1,112 @@
+<div class='container col-md-12' ng-include src="'views/_nav.html'"></div>
+<div class='container col-md-12' ng-include src="'views/_happy.html'"></div>
+<div class='container'>
+<section class='chat-section'>
+<!-- / container for Example headline and chat rooms -->
+<div class='container'>
+<h2 id='chat_application'>
+Example
+</h2>
+<p>
+<span class='label label-success' ng-show='selectedChannel'>And... We're Live!</span>
+Channels are listed across the screen. To send a chat message,
+enter a message in the box and click the 'Send' button.
+</p>
+<div class='dialog dialog-success'>
+<h6>
+Welcome {{data.username}}, click to select a channel below.
+<br>
+<br>
+<a class='btn btn-info' href='#/join'>Sign Out</a>
+</h6>
+<ul class='list-unstyled list-inline' ng-show='!channels'>
+<li>There are no channels. Log in as super to create some!</li>
+</ul>
+<ul class='list-unstyled list-inline'>
+<li class='roomlabel' ng-repeat='channel in channels'>
+<a class='btn btn-info' href='' ng-class="{'label-default': user != data.username, 'label-info': (channel != selectedChannel), 'label-warning':(channel == selectedChannel)}" ng-click='subscribe(channel)'>
+<i class='fa' ng-class="{'fa-spin':(channel == selectedChannel), 'fa-spinner':(channel == selectedChannel), 'fa-comments':(channel != selectedChannel)}"></i>
+{{channel}}
+</a>
+</li>
+<li class='roomlabel' ng-show='data.super'>
+<a class='btn btn-danger' href='' ng-click='subscribe("SuperHeroes")'>
+<i class='fa' ng-class="{'fa-spin':('SuperHeroes' == selectedChannel), 'fa-spinner':('SuperHeroes' == selectedChannel), 'fa-comments':('SuperHeroes' != selectedChannel)}"></i>
+SuperHeroes!
+</a>
+</li>
+<li class='roomlabel' ng-show='data.super'>
+<a class='btn btn-default' href='' ng-click='showCreate = !showCreate'>
+<i class='fa fa-magic'></i>
+Create new...
+</a>
+</li>
+<div ng-show='showCreate'>
+<form ng-submit='createChannel()'>
+<h6>Create New Room</h6>
+<div class='input-group'>
+<input class='input-sm form-control' ng-model='newChannel' placeholder='Room Name' type='text'>
+<span class='input-group-btn'>
+<input class='input-sm btn btn-default' type='submit' value='Go!'>
+</span>
+</div>
+<br>
+<br>
+</form>
+</div>
+</ul>
+</div>
+<div class='row'>
+<!-- / container for Online Users -->
+<div class='col-md-2'>
+<small class='marker'>Online Users</small>
+<ul class='list-unstyled'>
+<li ng-repeat='user in users track by $index'>
+<span class='label btn-mini userlabel' ng-class="{'label-default': user != data.username, 'label-info': (user == data.username)}" title='(Location: {{userData[user].city || "unknown"}})'>
+<i class='fa fa-user'></i>
+{{user}}
+</span>
+</li>
+</ul>
+</div>
+<!-- / container for the newMessage form -->
+<div class='col-md-10'>
+<small class='marker'>Chat History</small>
+<form ng-submit='publish()'>
+<div class='input-group'>
+<input class='input-sm form-control' ng-model='newMessage' type='text'>
+<span class='input-group-btn'>
+<input class='input-sm btn btn-default' type='submit' value='Send'>
+</span>
+</div>
+</form>
+<!-- / The chat well -->
+<div class='well chatbox' fa-app id='chat_history' style='width:100%; height:19em;'>
+<!-- / container for the first line of the chat -->
+<div fa-modifier fa-opacity='poppingtext.opacity' fa-scale='poppingtext.scale' fa-size='[1280,20]' fa-translate='[5, -15, 0]'>
+<div fa-color="'#3498db'" fa-surface>
+{{messages2.message2}}
+</div>
+</div>
+<!-- / the rest of the main chat -->
+<div fa-modifier fa-size='[1280, 20]' fa-translate='[5, $index * 20 + 20 -15, 0]' ng-repeat='message in messages1 track by $index'>
+<div fa-color="'#3498db'" fa-surface>
+{{message}}
+</div>
+</div>
+<!-- // join/leave-alert -->
+<!-- %div(fa-modifier=true -->
+<!-- fa-origin="[1,1]" -->
+<!-- fa-size="[200,30]" -->
+<!-- fa-opacity="poppingp.opacity" -->
+<!-- ) -->
+<!-- %div(fa-surface=true -->
+<!-- fa-background-color="'red'" -->
+<!-- ) {{palert.messagep}} -->
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div ng-include src="'views/_footer.html'"></div>
